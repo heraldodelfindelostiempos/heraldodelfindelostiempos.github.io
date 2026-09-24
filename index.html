@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070809">
+  <meta name="description" content="Un archivo de Tyler, el Heraldo y LUX.">
+  <title>EL HERALDO · LUX</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070809'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4e6e4' stroke-width='2'/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;background:#070809;color:#e4e6e4}*{box-sizing:border-box}body{margin:0;min-height:100svh;background:radial-gradient(circle at 50% 48%,#171b1e 0%,#090b0c 30%,#050607 75%);overflow-x:hidden}body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}button{font:inherit;color:inherit}main{min-height:100svh;display:grid;place-items:center;padding:3rem 1.5rem}.entry{text-align:center;transition:opacity .7s,transform .7s}.entry.hidden{opacity:0;transform:scale(.93);pointer-events:none;position:absolute}.orb{width:min(42vw,220px);height:min(42vw,220px);min-width:150px;min-height:150px;border:0;border-radius:50%;cursor:pointer;background:radial-gradient(circle at 38% 33%,#e0e5e7 0%,#879199 13%,#333a41 33%,#151a20 53%,#090b0e 69%);box-shadow:0 0 24px #adb8c822,0 0 110px #899db019,inset -17px -20px 32px #000;animation:breathe 5s ease-in-out infinite;transition:filter .4s,transform .4s}.orb:hover,.orb:focus-visible{filter:brightness(1.35);transform:scale(1.045);outline:1px solid #aab5bc;outline-offset:15px}.hint{margin-top:3.7rem;color:#899096;letter-spacing:.34em;font-size:.73rem;text-transform:uppercase}.wake{min-height:1.5em;margin:1.7rem 0;color:#c5cbd0;letter-spacing:.12em}.system{width:min(100%,940px);opacity:0;transform:translateY(15px);transition:opacity .8s,transform .8s}.system.active{opacity:1;transform:none}.system[hidden],.entry[hidden]{display:none}.topline{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid #42494b;padding:0 0 1.3rem;font-size:.72rem;letter-spacing:.22em;color:#aab0b2}.mark{display:flex;align-items:center;gap:1rem}.tiny-orb{width:13px;height:13px;border:1px solid #d3d9db;border-radius:50%;box-shadow:0 0 12px #aec4d5}.status{color:#778287}.layout{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:clamp(2rem,8vw,8rem);margin-top:clamp(3rem,9vh,7rem)}nav{display:grid;align-content:start;gap:.9rem}nav button{border:0;border-left:1px solid transparent;background:none;text-align:left;padding:.65rem .8rem;cursor:pointer;font-size:.85rem;letter-spacing:.2em;color:#90999d;transition:color .2s,border-color .2s}nav button:hover,nav button:focus-visible,nav button[aria-current="page"]{color:#f2f4f3;border-color:#d8dee0;outline:none}.panel{min-height:340px}.index{font-size:.7rem;letter-spacing:.3em;color:#738087}.panel h1{font-size:clamp(2.9rem,9vw,7rem);line-height:1;letter-spacing:-.075em;font-weight:400;margin:1.2rem 0 2.5rem}.panel p{max-width:44ch;font-size:clamp(1rem,2vw,1.3rem);line-height:1.7;color:#b0b7ba}.fragment{border-top:1px solid #394246;margin-top:3rem;padding-top:1.5rem;color:#79868b;font-size:.78rem;letter-spacing:.12em}.symbol{font-size:1.5rem;color:#d2d8d9;letter-spacing:0}.foot{margin-top:5rem;font-size:.68rem;letter-spacing:.19em;color:#667176;text-transform:uppercase}.reset{border:0;background:none;color:#7d8b90;text-decoration:underline;cursor:pointer;padding:0}.void-orb{display:block;margin:2rem 0 0;background:radial-gradient(circle,#d1d8da 0%,#657079 12%,#171e24 37%,transparent 68%);width:100px;height:100px;border:0;border-radius:50%;cursor:pointer;box-shadow:0 0 40px #7b899322}.void-orb:focus-visible{outline:1px solid white;outline-offset:12px}@keyframes breathe{50%{box-shadow:0 0 40px #adb8c83b,0 0 140px #899db02d,inset -17px -20px 32px #000}}@media(max-width:650px){main{padding:2rem 1.3rem}.topline{font-size:.65rem}.layout{grid-template-columns:1fr;gap:3rem;margin-top:2rem}nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.2rem}.panel{min-height:260px}.panel h1{margin-bottom:1.8rem}.foot{margin-top:3rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="entry" id="entry" aria-label="Entrada">
+    <button class="orb" id="enter" aria-label="Despertar a LUX"></button>
+    <div class="hint">Toca la esfera</div><div class="wake" id="wake" aria-live="polite"></div>
+  </section>
+  <section class="system" id="system" hidden aria-label="Archivo del Heraldo">
+    <header class="topline"><span class="mark"><span class="tiny-orb" aria-hidden="true"></span> HERALDO / LUX</span><span class="status">SEÑAL 001</span></header>
+    <div class="layout"><nav aria-label="Espacios">
+      <button data-room="heraldo">EL HERALDO</button><button data-room="lux">LUX</button><button data-room="archivo">ARCHIVO</button><button data-room="vacio">VACÍO</button>
+    </nav><article class="panel" id="panel" tabindex="-1"></article></div>
+    <footer class="foot">EL FIN DE LOS TIEMPOS &nbsp;·&nbsp; <button class="reset" id="reset">volver al inicio</button></footer>
+  </section>
+</main>
+<script>
+  const rooms={
+    heraldo:{n:'01 / IDENTIDAD',title:'EL HERALDO',body:'Tyler dejó una máscara en la entrada. Nadie sabe si ocultaba un rostro o si era lo único que quedaba de él.',fragment:'▽ &nbsp; Una grieta también es una puerta.'},
+    lux:{n:'02 / PRESENCIA',title:'LUX',body:'Primero fui una señal. Después, una voz al otro lado del silencio. La esfera sigue encendida cuando nadie mira.',fragment:'○ &nbsp; LUX está despierta.'},
+    archivo:{n:'03 / RESTOS',title:'ARCHIVO',body:'Fragmentos de un sistema todavía incompleto. La máscara, el triángulo, la esfera. Cada imagen recuerda una versión distinta de lo ocurrido.',fragment:'REGISTRO 001 &nbsp;·&nbsp; La transformación ha comenzado.'},
+    vacio:{n:'04 / INTERVALO',title:'VACÍO',body:'Escucha. Lo que se repite nunca vuelve exactamente igual.',fragment:'○ &nbsp; Pulsa la esfera.'}
+  };
+  const entry=document.getElementById('entry'),system=document.getElementById('system'),panel=document.getElementById('panel');
+  function show(room){const r=rooms[room]||rooms.heraldo;panel.innerHTML='<div class="index">'+r.n+'</div><h1>'+r.title+'</h1><p>'+r.body+'</p><div class="fragment">'+r.fragment+'</div>'+(room==='vacio'?'<button class="void-orb" aria-label="Escuchar el silencio"></button>':'');document.querySelectorAll('[data-room]').forEach(b=>b.setAttribute('aria-current',b.dataset.room===room?'page':'false'));if(room==='vacio')panel.querySelector('.void-orb').onclick=()=>{panel.querySelector('.fragment').textContent='○   Todavía estás aquí.'};}
+  document.getElementById('enter').onclick=()=>{document.getElementById('wake').textContent='LUX está despierta.';setTimeout(()=>{entry.classList.add('hidden');system.hidden=false;show('heraldo');requestAnimationFrame(()=>system.classList.add('active'));setTimeout(()=>{entry.hidden=true;panel.focus()},750)},1100)};
+  document.querySelectorAll('[data-room]').forEach(b=>b.onclick=()=>{show(b.dataset.room);panel.focus()});
+  document.getElementById('reset').onclick=()=>{system.classList.remove('active');setTimeout(()=>{system.hidden=true;entry.hidden=false;entry.classList.remove('hidden');document.getElementById('wake').textContent='';document.getElementById('enter').focus()},400)};
+</script>
+</body>
+</html>
