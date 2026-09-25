@@ -21,7 +21,7 @@
     start: 'COMENZAR', end: 'FIN DE PARTIDA', hit: '¡GOLPE!'
   };
   const images = {};
-  const sources = {hero:'assets/heraldo-game.png', enemy:'assets/yakuza-game.png', street:'assets/calle-game.png'};
+  const sources = {hero:'assets/heraldo-game.png', enemy:'assets/yakuza-game.png', street:'assets/calle-game.png?v=14000876'};
   let loaded = 0, available = false, running = false, ended = false;
   let elapsed = 0, score = 0, spawnIn = .8, punchFor = 0, cooldown = 0, flashFor = 0, last = 0;
   let enemies = [];
