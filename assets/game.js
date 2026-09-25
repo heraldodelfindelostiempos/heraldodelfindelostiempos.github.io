@@ -28,12 +28,14 @@
   const heroX = 54, heroY = 91, heroSize = 143, enemySize = 135;
 
   function overlay(label) {
-    ctx.fillStyle = 'rgba(5,12,10,.76)';
-    ctx.fillRect(0, 0, 640, 240);
+    ctx.fillStyle = 'rgba(5,12,10,.85)';
+    ctx.fillRect(198, 99, 244, 42);
+    ctx.strokeStyle = '#c3c89d';
+    ctx.strokeRect(198, 99, 244, 42);
     ctx.fillStyle = '#e4e6c5';
-    ctx.font = 'bold 24px monospace';
+    ctx.font = 'bold 19px monospace';
     ctx.textAlign = 'center';
-    ctx.fillText(label, 320, 124);
+    ctx.fillText(label, 320, 126);
     ctx.textAlign = 'left';
   }
   function render() {
