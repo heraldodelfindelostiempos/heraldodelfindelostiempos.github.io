@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#100d2b">
+  <meta name="description" content="MAREA — un juego de surf de un solo toque.">
+  <title>MAREA — surf infinito</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="game" aria-label="MAREA, juego de surf">
+    <canvas id="screen" width="1280" height="720" aria-label="Ola y surfista"></canvas>
+    <div id="start" class="overlay">
+      <div class="panel">
+        <div class="eyebrow">SURF INFINITO</div>
+        <h1>MAREA</h1>
+        <p>Mantén para bajar y cargar velocidad.<br>Suelta para subir y saltar. Mantén en el aire para girar.</p>
+        <button id="startButton" type="button">ENTRAR AL AGUA</button>
+        <span class="small">Un dedo · ratón · espacio</span>
+      </div>
+    </div>
+    <button id="soundButton" class="sound" type="button" aria-label="Silenciar música">♫</button>
+    <div id="rotate" aria-hidden="true">Gira el móvil para surfear en horizontal ↻</div>
+  </main>
+  <audio id="music" src="./audio/marea_ambient.ogg" preload="auto" loop></audio>
+  <script src="./game.js" defer></script>
+</body>
+</html>
