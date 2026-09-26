@@ -14,6 +14,6 @@ Juego y banda sonora originales. Funciona sin bibliotecas externas; abre `index.
 
 De vez en cuando aparece la Gran Ola: el cielo se oscurece y la música cede espacio al sonido del mar. Aterrizar un backflip en su cresta da 1000 puntos extra una sola vez por ola. Los combos dejan una estela rosa más intensa.
 
-El surfista lleva pelo largo rubio, barba rubia y ojos turquesa; el neopreno negro y turquesa no tiene emblema en el pecho.
+Se puede elegir entre cuatro surfistas: Rubio (neopreno negro y turquesa, pelo largo y barba rubia), Punk (violeta y lima, cresta rosa), Atlas (corpulento, piel oscura, azul y naranja) y Yuna (asiática, rojo y crema, pelo oscuro). El personaje se puede cambiar entre partidas.
 
-Los gráficos se dibujan en una resolución de 320 × 180 píxeles, con bordes nítidos, tramado y colores reducidos de inspiración 16 bits. De noche se iluminan peces, espuma y estela, cuyos destellos se apagan lentamente. Antes de la tormenta las olas se calman, desaparecen las aves y desciende la música.
+La escena se compone a 640 × 360 píxeles con facetas de luz y sombreado suave, inspirada en consolas de 64 bits. La música original mezcla las pistas climáticas con campanas acuáticas, acordes y ecos procedimentales; no utiliza melodías de otros juegos. De noche se iluminan peces, espuma y estela, cuyos destellos se apagan lentamente. Antes de la tormenta las olas se calman, desaparecen las aves y desciende la música.
