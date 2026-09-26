@@ -155,8 +155,22 @@ function surfer(y,angle,pose=s,offset=0){
  poly([[-69,9],[-58,4],[-36,2],[36,2],[58,5],[70,10],[58,16],[37,19],[-38,19],[-58,16]],'#27334c');
  poly([[-65,8],[-53,5],[-33,4],[35,4],[54,7],[65,10],[53,14],[35,16],[-35,16],[-55,13]],board.color);
  line([[-51,7],[49,7]],board.rail,2.2);line([[-18,13],[24,13]],'rgba(17,33,51,.28)',1.6);
- // The whole surfer is an orb: eyes and hair carry the identity.
- const cy=-22+bob;
+ // Keep the surfing stance and indy grab beneath the spherical head.
+ const bend=clamp(.35+pose.tuck*.58+pose.landing*.16,0,1),suit=rgb(ch.suit,'#111b32',.15),hip=[2,-29+5*bend],shoulder=[-5,-58+8*bend];
+ const rearKnee=[-27,-15],leadKnee=[28,-14];
+ bone([-29,2],rearKnee,9*ch.build,suit);bone(rearKnee,hip,11*ch.build,suit);
+ bone([28,2],leadKnee,9*ch.build,suit);bone(leadKnee,hip,11*ch.build,suit);
+ line([[-29,3],[-40,5]],ch.skin,5);line([[29,3],[40,5]],ch.skin,5);
+ bone(hip,shoulder,18*ch.build,suit);
+ poly([[-14,-52+8*bend],[-5,-58+8*bend],[7,-50+8*bend],[4,-33+5*bend],[-9,-32+5*bend]],ch.accent);
+ line([[-11,-49+8*bend],[-7,-36+5*bend]],ch.highlight,2.4);
+ const reach=pose.grab,leftElbow=[mix(-28,-20,reach),mix(-43,-19,reach)],leftHand=[mix(-41,1,reach),mix(-49,9,reach)];
+ bone([shoulder[0]-9,shoulder[1]+3],leftElbow,7*ch.build,suit);bone(leftElbow,leftHand,6*ch.build,suit);circle(leftHand[0],leftHand[1],3.7,ch.skin);
+ if(reach>.65)line([[leftHand[0],leftHand[1]],[leftHand[0]+3,12]],ch.skin,2.5);
+ const rightElbow=[24,-43+8*bend],rightHand=[42,-50+12*bend];
+ bone([shoulder[0]+9,shoulder[1]+4],rightElbow,7*ch.build,suit);bone(rightElbow,rightHand,6*ch.build,suit);circle(rightHand[0],rightHand[1],3.7,ch.skin);
+ // Orb faces have only colored eyes and distinct hair.
+ const cy=-77+8*bend+bob;
  circle(0,cy+1,24,'#101d32');circle(0,cy,22,rgb(ch.suit,'#29445b',.6));
  circle(-8,cy+2,4.4,'#122238');circle(8,cy+2,4.4,'#122238');
  circle(-8,cy+2,2.8,ch.eyes);circle(8,cy+2,2.8,ch.eyes);
