@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#100d2b">
   <meta name="description" content="MAREA — juego de surf creado por nachommmartinez.">
   <title>MAREA — surf infinito</title>
-  <link rel="stylesheet" href="./style.css?v=5">
+  <link rel="stylesheet" href="./style.css?v=6">
 </head>
 <body>
   <main id="game" aria-label="MAREA, juego de surf creado por nachommmartinez">
@@ -16,6 +16,13 @@
         <div class="eyebrow">SURF INFINITO</div>
         <h1>MAREA</h1>
         <div class="byline">CREADO POR NACHOMMMARTINEZ</div>
+        <div class="choose-title">ELIGE SURFISTA</div>
+        <div class="characters" role="group" aria-label="Elegir surfista">
+          <button class="character selected" type="button" data-character="0" aria-pressed="true"><span class="portrait blond"><span></span></span><strong>RUBIO</strong><small>NEGRO · TURQUESA</small></button>
+          <button class="character" type="button" data-character="1" aria-pressed="false"><span class="portrait punk"><span></span></span><strong>PUNK</strong><small>VIOLETA · LIMA</small></button>
+          <button class="character" type="button" data-character="2" aria-pressed="false"><span class="portrait atlas"><span></span></span><strong>ATLAS</strong><small>AZUL · NARANJA</small></button>
+          <button class="character" type="button" data-character="3" aria-pressed="false"><span class="portrait yuna"><span></span></span><strong>YUNA</strong><small>ROJO · CREMA</small></button>
+        </div>
         <p>Toca para saltar desde la ola.<br>Mantén para hacer un backflip y suelta para aterrizar recto.</p>
         <button id="startButton" type="button">ENTRAR AL AGUA</button>
         <span class="small">Un dedo · ratón · espacio</span>
@@ -32,6 +39,7 @@
         </form>
         <ol id="highscores" aria-label="Diez mejores puntuaciones"></ol>
         <button id="replayButton" type="button">OTRA OLA</button>
+        <button id="changeCharacterButton" type="button">CAMBIAR SURFISTA</button>
       </div>
     </div>
     <button id="soundButton" class="sound" type="button" aria-label="Silenciar música">♫</button>
@@ -40,6 +48,6 @@
   <audio id="music" src="./audio/marea_ambient.ogg" preload="auto" loop></audio>
   <audio id="musicNight" src="./audio/marea_noche.ogg" preload="auto" loop></audio>
   <audio id="musicStorm" src="./audio/marea_tormenta.ogg" preload="auto" loop></audio>
-  <script src="./game.js?v=14" defer></script>
+  <script src="./game.js?v=15" defer></script>
 </body>
 </html>
