@@ -26,7 +26,20 @@ function weather(){const p=((s.world/2600)%4+4)%4,stage=Math.floor(p),t=smooth((
 function poly(points,color){ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.closePath();ctx.fill()}
 function line(points,color,width=2){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineJoin='round';ctx.lineCap='round';ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.stroke()}
 function circle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fill()}
-function palm(x,y,z){const crown=[x+19*z,y-100*z],ink='#1c183d';line([[x,y],crown],ink,7*z);for(const side of [-1,1])for(let i=0;i<3;i++){const reach=42+i*13;line([crown,[crown[0]+side*reach*.58*z,crown[1]-27*z],[crown[0]+side*reach*z,crown[1]+(-22+i*16)*z]],ink,5*z)}line([crown,[crown[0]+z,crown[1]-47*z]],ink,5*z)}
+function palm(x,y,z){
+ const crown=[x+19*z,y-100*z],ink='#1c183d';
+ ctx.strokeStyle=ink;ctx.lineWidth=6*z;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+4*z,y-60*z,crown[0],crown[1]);ctx.stroke();
+ for(const side of [-1,1])for(let i=0;i<3;i++){
+  const reach=(54+i*14)*z,tip=[crown[0]+side*reach,crown[1]+(8+i*10)*z];
+  const mid=[crown[0]+side*reach*.55,crown[1]-(16-i*4)*z];
+  line([crown,mid,tip],ink,3.6*z);
+  for(const f of [.42,.68]){
+   const bx=mix(crown[0],tip[0],f),by=mix(crown[1],tip[1],f)-8*z;
+   line([[bx,by],[bx+side*8*z,by+12*z]],ink,2.2*z);
+  }
+ }
+ line([crown,[crown[0]+2*z,crown[1]-24*z]],ink,3*z)
+}
 function background(p){const gradient=ctx.createLinearGradient(0,0,0,450);gradient.addColorStop(0,p.high);gradient.addColorStop(1,p.low);ctx.fillStyle=gradient;ctx.fillRect(0,0,W,H);circle(1030,171,96,`rgba(255,110,155,${.13*(1-p.rain*.7)})`);ctx.globalAlpha=1-p.rain*.55;circle(1030,171,65,p.sun);ctx.globalAlpha=1;ctx.fillStyle=p.low;ctx.globalAlpha=.72*(1-p.rain);for(const [x,y,w] of [[974,191,112],[984,206,92],[1000,222,60]])ctx.fillRect(x,y,w,5);ctx.globalAlpha=1;
  for(let i=0;i<4;i++){const x=((i*251-s.world*.06)%(W+340)+(W+340))%(W+340)-170,y=248+13*Math.sin(i*3.1);line([[x,y],[x+120+(i%3)*45,y]],'rgba(255,160,205,.15)',3)}
  if(p.rain)for(let i=0;i<4;i++){const x=((i*411-s.world*.11)%(W+340)+(W+340))%(W+340)-170;ctx.fillStyle=`rgba(16,24,40,${.36*p.rain})`;ctx.fillRect(x,92+(i%2)*43,320,31)}
