@@ -8,3 +8,5 @@ html,body{font-family:monospace}canvas{image-rendering:auto}.overlay{backdrop-fi
 
 /* Crisp interface and unobscured silhouettes. */
 .overlay,#gameOver{backdrop-filter:none}.panel h1,.scores-panel h2{font-style:normal}.panel .character{transform:none}.portrait-art{box-shadow:0 3px 0 #0b102d}
+
+.board-title{margin:10px 0 4px}.boards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:min(570px,88vw);margin:auto}.boards button{display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:6px 8px;background:#182544;color:#e5eee9;border:2px solid #53667c;box-shadow:none;font:700 10px monospace;letter-spacing:.08em}.boards button.selected,.boards button[aria-pressed=true]{border-color:#ffe8a3;background:#263d51}.board-swatch{display:block;width:42px;height:10px;background:var(--board);border-radius:50%;transform:skewX(-22deg);box-shadow:0 2px 0 #182337}@media(max-width:600px){.boards{gap:3px;width:94vw}.boards button{padding:5px 2px;gap:3px;font-size:7px}.board-swatch{width:23px;height:7px}}
