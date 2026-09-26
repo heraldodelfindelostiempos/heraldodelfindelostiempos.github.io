@@ -6,7 +6,7 @@ const music=document.getElementById('music'),tracks=[music,document.getElementBy
 const gameOver=document.getElementById('gameOver'),scoreForm=document.getElementById('scoreForm'),scoreList=document.getElementById('highscores'),initials=document.getElementById('initials');
 const C={ink:'#101028',cream:'#ffe8a3',pink:'#ff5198',mint:'#baf0ce',teal:'#28cfc8'};
 const SKIN='#c98d79',SUIT='#14283f';
-const BLOND='#e9bf73',BLOND_SHADOW='#a77948';
+const BLOND='#e9bf73',BLOND_SHADOW='#ba8848';
 let audioGraph=null;
 let s;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -147,9 +147,9 @@ function surfer(y,angle){
  circle(head[0],head[1],14,SKIN);
  poly([[head[0]-14,head[1]-4],[head[0]-13,head[1]-13],[head[0]-1,head[1]-18],[head[0]+12,head[1]-11],[head[0]+9,head[1]-5],[head[0]+1,head[1]-9],[head[0]-8,head[1]-5]],BLOND);
  line([[head[0]-10,head[1]-11],[head[0]-2,head[1]-15],[head[0]+8,head[1]-10]],'#fff0ae',2);
- poly([[head[0]+11,head[1]+4],[head[0]+13,head[1]+9],[head[0]+7,head[1]+15],[head[0]+1,head[1]+12],[head[0]+5,head[1]+8]],BLOND_SHADOW);
- line([[head[0]+8,head[1]+5],[head[0]+13,head[1]+5]],BLOND,2.7);
- line([[head[0]+3,head[1]+11],[head[0]+7,head[1]+13],[head[0]+11,head[1]+9]],BLOND,1.8);
+ poly([[head[0]+6,head[1]+5],[head[0]+13,head[1]+4],[head[0]+15,head[1]+10],[head[0]+9,head[1]+18],[head[0]+2,head[1]+13],[head[0]+3,head[1]+9]],BLOND_SHADOW);
+ line([[head[0]+8,head[1]+5],[head[0]+13,head[1]+5]],'#ffe2a0',3);
+ line([[head[0]+3,head[1]+12],[head[0]+8,head[1]+15],[head[0]+13,head[1]+9]],BLOND,2.2);
  line([[head[0]+11,head[1]-1],[head[0]+16,head[1]+2],[head[0]+10,head[1]+4]],SKIN,2);
  circle(head[0]+7,head[1]-2,2.2,C.ink);circle(head[0]+7.3,head[1]-2.2,1.4,'#36d8d1');line([[head[0]+4,head[1]-7],[head[0]+10,head[1]-7]],BLOND_SHADOW,1.5);line([[head[0]+5,head[1]+7],[head[0]+11,head[1]+7]],'#713a49',1.2);
  ctx.restore()
