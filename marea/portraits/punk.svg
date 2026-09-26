@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#547d84"/><stop offset="1" stop-color="#39335a"/></linearGradient><linearGradient id="skin" x2="1" y2=".4"><stop stop-color="#efc1a8"/><stop offset="1" stop-color="#c88684"/></linearGradient><linearGradient id="pink" x2="1" y2="1"><stop stop-color="#ff91cb"/><stop offset="1" stop-color="#be3a91"/></linearGradient></defs>
+<path fill="url(#bg)" d="M0 0h120v132H0z"/><path fill="#f49ac7" opacity=".19" d="m-6 35 126-27v13L0 52zm0 75 126-36v13L0 124z"/>
+<path fill="#2d2346" stroke="#17172c" stroke-width="3" d="M4 132q4-33 29-42l20-7 9 11 21-10 17 8q18 14 20 40z"/><path fill="#753a90" d="m29 94 25 7 5 31H20zm53-6-19 15-2 29h38z"/><path fill="#d8f16b" d="m41 94 9 6 4 32h-5zm35 3 10-6-13 41h-6z"/><path fill="#e6ac98" d="M49 74h29v24q-15 14-29-1z"/>
+<path fill="#523959" d="M38 45q1-17 17-24 23-8 35 12l-4 44q-23 21-47-1z"/><path fill="url(#skin)" stroke="#80566c" stroke-width="1.5" d="M38 42q8-11 23-12 23-2 29 16l-5 29q-11 22-25 20-16-5-21-25z"/><path fill="#d3918c" opacity=".55" d="M42 68q4 15 19 17 13 0 22-14-2 19-22 23-18-5-19-26z"/>
+<path fill="#29233c" d="M39 39q-8 17-2 31l9-7 1-28z"/><path fill="url(#pink)" stroke="#8c307f" stroke-width="1.5" d="M39 37 29 24l12 3 3-24 9 20L63 1l4 22 17-16-4 24 16-2-8 11q-20-11-49-3z"/><path fill="#ffe6b4" opacity=".65" d="m44 10 5 17 10 1-8-7 11-18-17 15z"/>
+<path fill="none" stroke="#64364f" stroke-width="2.2" d="m43 55 15-4m15 0 13 3"/><path fill="#25213f" d="M44 59q8-5 15 0-7 5-15 0zm27-1q7-5 14 0-7 5-14 0z"/><circle cx="53" cy="58" r="2" fill="#b2e966"/><circle cx="79" cy="57" r="2" fill="#b2e966"/><path fill="none" stroke="#a16f72" stroke-width="1.5" d="m65 58-3 13 5 2m-8 7q6 3 13-1"/>
+<circle cx="38" cy="67" r="3" fill="#d9f16b"/><circle cx="38" cy="67" r="1.1" fill="#3a2b4e"/><circle cx="81" cy="80" r="2" fill="#e8e4bd"/><path fill="#553b53" d="M40 44q5-7 8-8l-3 26-7 8z"/>
+<path fill="none" stroke="#f0ebc6" opacity=".5" stroke-width="1.4" d="m12 113 31-14m45-5 22 17"/>
+</svg>
