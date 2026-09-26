@@ -11,3 +11,5 @@ Toca la pantalla (o pulsa la barra espaciadora) para saltar desde la ola. Manté
 Cada 100 metros da 100 puntos; cada backflip completado da 250 puntos multiplicados por el combo. Al caer, las diez mejores puntuaciones se guardan con tres iniciales en este navegador mediante `localStorage`.
 
 Juego y banda sonora originales. Funciona sin bibliotecas externas; abre `index.html` desde un servidor local para probar cambios.
+
+De vez en cuando aparece la Gran Ola: el cielo se oscurece y la música cede espacio al sonido del mar. Aterrizar un backflip en su cresta da 1000 puntos extra una sola vez por ola. Los combos dejan una estela rosa más intensa.
