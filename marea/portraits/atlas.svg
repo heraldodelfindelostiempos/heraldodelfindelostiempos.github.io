@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132" role="img">
-<rect width="120" height="132" fill="#203f58"/>
-<circle cx="60" cy="56" r="48" fill="#426e7d"/>
-<circle cx="59" cy="54" r="40" fill="#202735"/>
-<path d="M4 132 Q7 102 31 96 L46 92 60 109 74 92 89 96 Q113 102 116 132Z" fill="#215486"/>
-<path d="M46 94 L60 109 74 94" fill="none" stroke="#e78f56" stroke-width="5" stroke-linejoin="round"/>
-<path d="M51 90 L51 105 Q60 113 69 105 L69 90Z" fill="#774b39"/>
-<path d="M38 54 Q40 39 59 39 Q80 39 82 56 L79 81 Q75 104 60 106 Q44 105 40 81Z" fill="#865b43"/>
-<path d="M29 48 Q29 19 58 17 Q91 18 90 53 L81 60 Q76 47 70 44 L45 47 36 63Z" fill="#202735"/><path d="M36 37 Q50 19 72 29" stroke="#353947" stroke-width="6" fill="none"/>
-<path d="M43 70 Q48 67 54 69 M66 69 Q72 67 77 70" fill="none" stroke="#202735" stroke-width="2.5" stroke-linecap="round"/>
-<circle cx="50" cy="75" r="2.4" fill="#e9bb91"/><circle cx="71" cy="75" r="2.4" fill="#e9bb91"/>
-<path d="M61 79 L59 87 63 87" fill="none" stroke="#55372d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M53 94 Q60 97 67 94" fill="none" stroke="#55372d" stroke-width="2" stroke-linecap="round"/>
-<path d="M45 90 Q51 100 60 101 Q70 101 77 90 Q73 106 61 109 Q47 108 45 90Z" fill="#312d34"/><path d="M50 94 Q60 99 70 94" stroke="#9d6b4e" stroke-width="2" fill="none"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132"><rect width="120" height="132" fill="#183247"/><circle cx="60" cy="54" r="46" fill="#39697c" opacity=".62"/><path d="M4 132 Q9 103 34 97 L49 93 60 103 72 93 87 97 Q112 103 116 132Z" fill="#194a76"/><path d="M46 96 L60 108 74 96" fill="none" stroke="#ec915d" stroke-width="5" stroke-linejoin="round"/><path d="M50 88 L50 100 Q60 108 70 100 L70 88Z" fill="#845940"/><path d="M40 55 Q41 38 60 37 Q79 38 80 55 L78 82 Q75 99 60 103 Q45 99 42 82Z" fill="#845940"/><circle cx="60" cy="51" r="39" fill="#202333"/><path d="M38 54 Q40 27 60 26 Q80 27 83 54 L73 49 46 51Z" fill="#202333"/><path d="M48 94 Q60 108 73 94 L69 106 Q60 113 51 105Z" fill="#202333"/><path d="M45 69 L53 69 M67 69 L75 69" stroke="#183247" stroke-width="2.6" stroke-linecap="round"/><path d="M59 86 L63 86 M54 94 Q60 97 66 94" fill="none" stroke="#183247" stroke-width="2" stroke-linecap="round"/></svg>
