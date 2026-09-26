@@ -13,3 +13,5 @@ Cada 100 metros da 100 puntos; cada backflip completado da 250 puntos multiplica
 Juego y banda sonora originales. Funciona sin bibliotecas externas; abre `index.html` desde un servidor local para probar cambios.
 
 De vez en cuando aparece la Gran Ola: el cielo se oscurece y la música cede espacio al sonido del mar. Aterrizar un backflip en su cresta da 1000 puntos extra una sola vez por ola. Los combos dejan una estela rosa más intensa.
+
+El surfista lleva pelo largo rubio, barba rubia y ojos turquesa; el neopreno negro y turquesa no tiene emblema en el pecho.

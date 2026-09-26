@@ -6,6 +6,7 @@ const music=document.getElementById('music'),tracks=[music,document.getElementBy
 const gameOver=document.getElementById('gameOver'),scoreForm=document.getElementById('scoreForm'),scoreList=document.getElementById('highscores'),initials=document.getElementById('initials');
 const C={ink:'#101028',cream:'#ffe8a3',pink:'#ff5198',mint:'#baf0ce',teal:'#28cfc8'};
 const SKIN='#c98d79',SUIT='#14283f';
+const BLOND='#e9bf73',BLOND_SHADOW='#a77948';
 let audioGraph=null;
 let s;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -131,9 +132,7 @@ function surfer(y,angle){
  bone(hip,shoulder,20,C.ink);
  poly([[-17,-66+16*bend],[-7,-72+17*bend],[1,-61+16*bend],[-1,-44+10*bend],[-7,-40+10*bend]],'#087f88');
  line([[-15,-64+16*bend],[-10,-51+13*bend]],C.teal,2);
- // Small stylized skull on the chest of the wetsuit.
- const sy=-58+15*bend;circle(-6,sy,6,'#b9e8dc');circle(-9,sy-1,1.3,C.ink);circle(-3,sy-1,1.3,C.ink);
- poly([[-6,sy],[-8,sy+3],[-4,sy+3]],C.ink);line([[-9,sy+5],[-3,sy+5]],C.ink,1.3);
+ line([[-2,-59+15*bend],[-1,-48+12*bend]],'#63d2ca',1.6);
  // The trailing hand reaches the board's middle for the indy grab.
  const leftShoulder=[shoulder[0]-8,shoulder[1]+6],leftElbow=[mix(-33,-20,grab),mix(-51+14*bend,-21,grab)+sway],leftHand=[mix(-48,1,grab),mix(-61+25*bend,8,grab)];
  bone(leftShoulder,leftElbow,9,C.ink);bone(leftElbow,[leftHand[0]-4,leftHand[1]-4],7,C.ink);bone([leftHand[0]-4,leftHand[1]-4],leftHand,5,SKIN);
@@ -142,13 +141,17 @@ function surfer(y,angle){
  bone(rightShoulder,rightElbow,9,C.ink);bone(rightElbow,[rightHand[0]-5,rightHand[1]+4],7,C.ink);bone([rightHand[0]-5,rightHand[1]+4],rightHand,5,SKIN);
  const head=[shoulder[0]-3,shoulder[1]-21];
  // Loose shoulder-length hair, with independent wind-blown strands.
- poly([[head[0]-3,head[1]-16],[head[0]-18,head[1]-12],[head[0]-23,head[1]-1],[head[0]-25,head[1]+13],[head[0]-32,head[1]+24+sway],[head[0]-22,head[1]+20],[head[0]-16,head[1]+27-sway],[head[0]-12,head[1]+10]],C.ink);
- line([[head[0]-17,head[1]-3],[head[0]-21,head[1]+13],[head[0]-29,head[1]+27+sway]],'#303053',2);
- line([[head[0]-12,head[1]+1],[head[0]-16,head[1]+15],[head[0]-19,head[1]+27-sway]],'#303053',2);
+ poly([[head[0]-3,head[1]-16],[head[0]-18,head[1]-12],[head[0]-23,head[1]-1],[head[0]-25,head[1]+13],[head[0]-32,head[1]+24+sway],[head[0]-22,head[1]+20],[head[0]-16,head[1]+27-sway],[head[0]-12,head[1]+10]],BLOND);
+ line([[head[0]-17,head[1]-3],[head[0]-21,head[1]+13],[head[0]-29,head[1]+27+sway]],BLOND_SHADOW,2);
+ line([[head[0]-12,head[1]+1],[head[0]-16,head[1]+15],[head[0]-19,head[1]+27-sway]],'#fff0ae',1.8);
  circle(head[0],head[1],14,SKIN);
- poly([[head[0]-14,head[1]-4],[head[0]-13,head[1]-13],[head[0]-1,head[1]-18],[head[0]+12,head[1]-11],[head[0]+9,head[1]-5],[head[0]+1,head[1]-9],[head[0]-8,head[1]-5]],C.ink);
+ poly([[head[0]-14,head[1]-4],[head[0]-13,head[1]-13],[head[0]-1,head[1]-18],[head[0]+12,head[1]-11],[head[0]+9,head[1]-5],[head[0]+1,head[1]-9],[head[0]-8,head[1]-5]],BLOND);
+ line([[head[0]-10,head[1]-11],[head[0]-2,head[1]-15],[head[0]+8,head[1]-10]],'#fff0ae',2);
+ poly([[head[0]+11,head[1]+4],[head[0]+13,head[1]+9],[head[0]+7,head[1]+15],[head[0]+1,head[1]+12],[head[0]+5,head[1]+8]],BLOND_SHADOW);
+ line([[head[0]+8,head[1]+5],[head[0]+13,head[1]+5]],BLOND,2.7);
+ line([[head[0]+3,head[1]+11],[head[0]+7,head[1]+13],[head[0]+11,head[1]+9]],BLOND,1.8);
  line([[head[0]+11,head[1]-1],[head[0]+16,head[1]+2],[head[0]+10,head[1]+4]],SKIN,2);
- circle(head[0]+7,head[1]-2,1.5,C.ink);line([[head[0]+4,head[1]-7],[head[0]+10,head[1]-7]],'#62384b',1.4);line([[head[0]+5,head[1]+7],[head[0]+11,head[1]+7]],'#713a49',1.5);
+ circle(head[0]+7,head[1]-2,2.2,C.ink);circle(head[0]+7.3,head[1]-2.2,1.4,'#36d8d1');line([[head[0]+4,head[1]-7],[head[0]+10,head[1]-7]],BLOND_SHADOW,1.5);line([[head[0]+5,head[1]+7],[head[0]+11,head[1]+7]],'#713a49',1.2);
  ctx.restore()
 }
 function logo(){ctx.save();ctx.font='italic 900 43px Arial Black, Arial, sans-serif';ctx.textBaseline='top';ctx.lineJoin='round';ctx.lineWidth=5;ctx.strokeStyle='rgba(255,50,138,.65)';ctx.strokeText('MAREA',54,27);ctx.fillStyle=C.teal;ctx.fillText('MAREA',49,23);ctx.fillStyle=C.cream;ctx.globalAlpha=.75;ctx.fillText('MAREA',50,22);ctx.globalAlpha=1;ctx.font='11px Arial, sans-serif';ctx.fillStyle=C.mint;ctx.fillText('CREADO POR NACHOMMMARTINEZ',52,73);ctx.restore()}
