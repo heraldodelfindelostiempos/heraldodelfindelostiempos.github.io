@@ -16,4 +16,4 @@ De vez en cuando aparece la Gran Ola: el cielo se oscurece y la música cede esp
 
 El surfista lleva pelo largo rubio, barba rubia y ojos turquesa; el neopreno negro y turquesa no tiene emblema en el pecho.
 
-La mejor partida se graba como un fantasma turquesa local que se puede perseguir en partidas posteriores; no produce colisiones. De noche se iluminan peces, espuma y estela, cuyos destellos se apagan lentamente. Antes de la tormenta las olas se calman, desaparecen las aves y desciende la música. El fantasma se guarda en `localStorage` de este navegador.
+Los gráficos se dibujan en una resolución de 320 × 180 píxeles, con bordes nítidos, tramado y colores reducidos de inspiración 16 bits. De noche se iluminan peces, espuma y estela, cuyos destellos se apagan lentamente. Antes de la tormenta las olas se calman, desaparecen las aves y desciende la música.
