@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132" role="img">
-<rect width="120" height="132" fill="#302e53"/>
-<circle cx="60" cy="56" r="48" fill="#715475"/>
-
-<path d="M4 132 Q7 102 31 96 L46 92 60 109 74 92 89 96 Q113 102 116 132Z" fill="#592a73"/>
-<path d="M46 94 L60 109 74 94" fill="none" stroke="#d7e964" stroke-width="5" stroke-linejoin="round"/>
-<path d="M51 90 L51 105 Q60 113 69 105 L69 90Z" fill="#ce917e"/>
-<path d="M40 59 Q43 43 60 43 Q78 43 80 59 L78 83 Q74 103 60 105 Q45 103 41 83Z" fill="#e4ad99"/>
-<path d="M38 57 L30 43 41 48 45 20 54 41 63 8 69 43 85 23 81 52 91 56 80 64Z" fill="#ed62b0"/><path d="M45 47 L52 30 52 52 M64 41 L68 23 73 51" stroke="#ffa8cf" stroke-width="4" fill="none"/>
-<path d="M43 70 Q48 67 54 69 M66 69 Q72 67 77 70" fill="none" stroke="#e958a7" stroke-width="2.5" stroke-linecap="round"/>
-<circle cx="50" cy="75" r="2.4" fill="#262a4d"/><circle cx="71" cy="75" r="2.4" fill="#262a4d"/>
-<path d="M61 79 L59 87 63 87" fill="none" stroke="#a96064" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M53 94 Q60 97 67 94" fill="none" stroke="#a96064" stroke-width="2" stroke-linecap="round"/>
-<circle cx="79" cy="89" r="2.6" fill="#d7e964"/><path d="M53 96 Q61 99 67 95" stroke="#9e4c72" stroke-width="2" fill="none"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132"><rect width="120" height="132" fill="#242743"/><circle cx="60" cy="54" r="46" fill="#6b4b78" opacity=".62"/><path d="M4 132 Q9 103 34 97 L49 93 60 103 72 93 87 97 Q112 103 116 132Z" fill="#4a2865"/><path d="M46 96 L60 108 74 96" fill="none" stroke="#d5ed67" stroke-width="5" stroke-linejoin="round"/><path d="M50 88 L50 100 Q60 108 70 100 L70 88Z" fill="#e0a38e"/><path d="M40 55 Q41 38 60 37 Q79 38 80 55 L78 82 Q75 99 60 103 Q45 99 42 82Z" fill="#e0a38e"/><path d="M35 56 L33 41 43 48 47 18 56 44 63 8 68 43 82 20 80 50 89 54Z" fill="#f15aa5"/><path d="M45 69 L53 69 M67 69 L75 69" stroke="#242743" stroke-width="2.6" stroke-linecap="round"/><path d="M59 86 L63 86 M54 94 Q60 97 66 94" fill="none" stroke="#242743" stroke-width="2" stroke-linecap="round"/></svg>
