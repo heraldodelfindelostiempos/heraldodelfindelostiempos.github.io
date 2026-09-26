@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#100d2b">
   <meta name="description" content="MAREA — juego de surf creado por nachommmartinez.">
   <title>MAREA — surf infinito</title>
-  <link rel="stylesheet" href="./style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=4">
 </head>
 <body>
   <main id="game" aria-label="MAREA, juego de surf creado por nachommmartinez">
@@ -21,10 +21,25 @@
         <span class="small">Un dedo · ratón · espacio</span>
       </div>
     </div>
+    <div id="gameOver" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
+      <div class="panel scores-panel">
+        <div class="eyebrow">FIN DE LA OLA</div>
+        <h2 id="gameOverTitle">RÉCORDS</h2>
+        <p id="finalScore"></p>
+        <form id="scoreForm" class="score-form hidden">
+          <label for="initials">TUS INICIALES · 3 LETRAS</label>
+          <div><input id="initials" type="text" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-label="Tres iniciales"><button type="submit">GUARDAR</button></div>
+        </form>
+        <ol id="highscores" aria-label="Diez mejores puntuaciones"></ol>
+        <button id="replayButton" type="button">OTRA OLA</button>
+      </div>
+    </div>
     <button id="soundButton" class="sound" type="button" aria-label="Silenciar música">♫</button>
     <div id="rotate" aria-hidden="true">Gira el móvil para surfear en horizontal ↻</div>
   </main>
   <audio id="music" src="./audio/marea_ambient.ogg" preload="auto" loop></audio>
-  <script src="./game.js?v=5" defer></script>
+  <audio id="musicNight" src="./audio/marea_noche.ogg" preload="auto" loop></audio>
+  <audio id="musicStorm" src="./audio/marea_tormenta.ogg" preload="auto" loop></audio>
+  <script src="./game.js?v=6" defer></script>
 </body>
 </html>
