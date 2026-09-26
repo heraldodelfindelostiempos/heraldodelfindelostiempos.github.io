@@ -15,3 +15,5 @@ Juego y banda sonora originales. Funciona sin bibliotecas externas; abre `index.
 De vez en cuando aparece la Gran Ola: el cielo se oscurece y la música cede espacio al sonido del mar. Aterrizar un backflip en su cresta da 1000 puntos extra una sola vez por ola. Los combos dejan una estela rosa más intensa.
 
 El surfista lleva pelo largo rubio, barba rubia y ojos turquesa; el neopreno negro y turquesa no tiene emblema en el pecho.
+
+La mejor partida se graba como un fantasma turquesa local que se puede perseguir en partidas posteriores; no produce colisiones. De noche se iluminan peces, espuma y estela, cuyos destellos se apagan lentamente. Antes de la tormenta las olas se calman, desaparecen las aves y desciende la música. El fantasma se guarda en `localStorage` de este navegador.
