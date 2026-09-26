@@ -13,6 +13,8 @@ const characters=[
  {name:'ATLAS',skin:'#734936',suit:'#1a396d',accent:'#e56d3e',highlight:'#f7b564',hair:'#19152b',shadow:'#0c1026',build:1.22,eyes:'#e9d0a7'},
  {name:'YUNA',skin:'#d3a387',suit:'#7d253d',accent:'#d55159',highlight:'#ffe6ad',hair:'#19172c',shadow:'#383046',build:.94,eyes:'#23213e'}
 ];
+const boards=[{name:'ROSA',color:'#f368a5',rail:'#ffd0df'},{name:'TURQUESA',color:'#38c9c6',rail:'#c7fff1'},{name:'DORADA',color:'#edb65d',rail:'#fff0b8'},{name:'VIOLETA',color:'#a68be8',rail:'#e7d9ff'}];
+let boardIndex=0;try{boardIndex=Math.max(0,Math.min(3,Number(localStorage.getItem('marea.board.v1'))||0))|0}catch{}
 let characterIndex=0;try{characterIndex=Math.max(0,Math.min(3,Number(localStorage.getItem('marea.character.v1'))||0))|0}catch{}
 let audioGraph=null;
 let s;
@@ -147,42 +149,32 @@ function wave(p){const crests=[],depths=[];for(let i=0;i<=64;i++){const x=i*20;c
  for(let i=0;i<42;i++){const x=((i*173-s.world*(.6+(i%3)*.12))%W+W)%W,y=top(x)+(i*37)%100-57;ctx.globalAlpha=.58;line([[x,y],[x-9-s.speed*.009,y+1]],i%7?p.water:p.foam,1.5);ctx.globalAlpha=1}}
 function bone(a,b,width,color=SUIT){line([a,b],color,width);circle(a[0],a[1],width/2,color);circle(b[0],b[1],width/2,color)}
 function surfer(y,angle,pose=s,offset=0){
- ctx.save();ctx.translate(X+offset,y);ctx.rotate(angle);ctx.scale(.56,.56);
- const ch=characters[characterIndex],bend=clamp(.35+pose.tuck*.58+pose.landing*.17,0,1),grab=pose.grab,sway=Math.sin(pose.clock*5)*2*(1-grab),silhouette=rgb(ch.suit,'#111b32',.32),skin=ch.skin;
- // A compact, readable silhouette with a slim pink surfboard.
- poly([[-67,9],[-55,4],[-34,2],[36,2],[59,6],[70,10],[59,15],[36,18],[-37,18],[-57,15]],'#f36caa');
- line([[-58,12],[51,12]],'#ffc1d8',2);line([[-40,5],[40,5]],'#9f3c73',2);
- poly([[-22,17],[-15,17],[-19,23]],'#263950');poly([[26,17],[33,16],[30,23]],'#263950');
- const hip=[3,-41+10*bend],backKnee=[mix(-18,-31,bend),-20],frontKnee=[mix(15,29,bend),-18],shoulder=[-7,-74+17*bend];
- bone([-31,1],backKnee,10*ch.build,silhouette);bone(backKnee,hip,12*ch.build,silhouette);
- bone([26,1],frontKnee,10*ch.build,silhouette);bone(frontKnee,hip,12*ch.build,silhouette);
- line([[-30,0],[-40,2]],skin,5);line([[27,0],[39,1]],skin,5);
- bone(hip,shoulder,20*ch.build,silhouette);
- poly([[-16,-65+16*bend],[-8,-70+17*bend],[6,-60+16*bend],[1,-44+10*bend],[-8,-42+10*bend]],ch.accent);
- line([[-12,-64+16*bend],[-6,-51+13*bend]],ch.highlight,2.5);
- const a=[shoulder[0]-8,shoulder[1]+6],el=[mix(-33,-20,grab),mix(-51+14*bend,-21,grab)+sway],hand=[mix(-48,1,grab),mix(-61+25*bend,8,grab)];
- bone(a,el,8*ch.build,silhouette);bone(el,hand,7*ch.build,silhouette);circle(hand[0],hand[1],4,skin);
- if(grab>.65)line([[hand[0],hand[1]],[hand[0]+3,12]],skin,2.8);
- const ra=[shoulder[0]+9,shoulder[1]+6],re=[23,-52+11*bend-sway],rh=[45,-67+20*bend];
- bone(ra,re,8*ch.build,silhouette);bone(re,rh,7*ch.build,silhouette);circle(rh[0],rh[1],4,skin);
- const hx=shoulder[0]-3,hy=shoulder[1]-21;
+ ctx.save();ctx.translate(X+offset,y);ctx.rotate(angle);ctx.scale(.62,.62);
+ const ch=characters[characterIndex],board=boards[boardIndex],bob=Math.sin(pose.clock*4)*1.5*(1-pose.grab);
+ // Four board colors are chosen independently from the surfer.
+ poly([[-69,9],[-58,4],[-36,2],[36,2],[58,5],[70,10],[58,16],[37,19],[-38,19],[-58,16]],'#27334c');
+ poly([[-65,8],[-53,5],[-33,4],[35,4],[54,7],[65,10],[53,14],[35,16],[-35,16],[-55,13]],board.color);
+ line([[-51,7],[49,7]],board.rail,2.2);line([[-18,13],[24,13]],'rgba(17,33,51,.28)',1.6);
+ // The whole surfer is an orb: eyes and hair carry the identity.
+ const cy=-22+bob;
+ circle(0,cy+1,24,'#101d32');circle(0,cy,22,rgb(ch.suit,'#29445b',.6));
+ circle(-8,cy+2,4.4,'#122238');circle(8,cy+2,4.4,'#122238');
+ circle(-8,cy+2,2.8,ch.eyes);circle(8,cy+2,2.8,ch.eyes);
+ circle(-9,cy+1,1.1,'#fff');circle(7,cy+1,1.1,'#fff');
  if(characterIndex===0){
-  poly([[hx-11,hy-12],[hx-21,hy-3],[hx-25,hy+20],[hx-32,hy+29],[hx-15,hy+23],[hx+10,hy+26],[hx+15,hy-10]],ch.shadow);
-  circle(hx,hy,13,skin);
-  poly([[hx-15,hy-3],[hx-13,hy-13],[hx+1,hy-19],[hx+13,hy-10],[hx+10,hy-3],[hx-2,hy-9]],ch.hair);
-  poly([[hx+4,hy+8],[hx+14,hy+5],[hx+12,hy+15],[hx+5,hy+18]],ch.hair);
+  poly([[-23,cy-9],[-19,cy-26],[-7,cy-30],[5,cy-27],[16,cy-19],[22,cy-8],[17,cy-12],[8,cy-18],[-4,cy-16],[-16,cy-11]],ch.hair);
+  poly([[-21,cy-11],[-26,cy+17],[-18,cy+19],[-15,cy-10]],ch.hair);
+  poly([[17,cy-12],[23,cy+18],[16,cy+18],[13,cy-10]],ch.hair);
  }else if(characterIndex===1){
-  circle(hx,hy,13,skin);
-  poly([[hx-15,hy-4],[hx-12,hy-25],[hx-5,hy-14],[hx,hy-37],[hx+5,hy-14],[hx+12,hy-27],[hx+14,hy-2]],ch.hair);
+  poly([[-20,cy-9],[-18,cy-30],[-10,cy-19],[-3,cy-38],[3,cy-20],[12,cy-33],[13,cy-17],[21,cy-25],[19,cy-7]],ch.hair);
  }else if(characterIndex===2){
-  circle(hx,hy-7,18,ch.hair);circle(hx,hy,14,skin);
-  poly([[hx-11,hy+10],[hx+1,hy+14],[hx+13,hy+8],[hx+9,hy+18],[hx-5,hy+19]],ch.shadow);
+  circle(-14,cy-16,10,ch.hair);circle(0,cy-24,12,ch.hair);circle(14,cy-17,10,ch.hair);
+  circle(-21,cy-5,5,ch.hair);circle(21,cy-5,5,ch.hair);
  }else{
-  poly([[hx-16,hy-14],[hx-23,hy+26],[hx-12,hy+24],[hx+18,hy+28],[hx+16,hy-13]],ch.hair);
-  circle(hx,hy,13,skin);
-  poly([[hx-15,hy-4],[hx-11,hy-16],[hx+8,hy-17],[hx+14,hy-4],[hx+1,hy-10]],ch.hair);
+  poly([[-21,cy-13],[-16,cy-27],[4,cy-30],[20,cy-19],[22,cy-11],[15,cy-17],[4,cy-15],[-8,cy-11]],ch.hair);
+  poly([[-21,cy-11],[-24,cy+23],[-16,cy+25],[-14,cy-9]],ch.hair);
+  poly([[17,cy-11],[23,cy+24],[15,cy+25],[13,cy-9]],ch.hair);
  }
- circle(hx+7,hy-2,1.9,ch.eyes);
  ctx.restore()
 }
 function logo(){ctx.save();ctx.font='italic 900 43px Arial Black,Impact,sans-serif';ctx.textBaseline='top';ctx.lineJoin='round';ctx.lineWidth=5;ctx.strokeStyle='#152139';ctx.strokeText('MAREA',51,23);ctx.fillStyle='#a34f70';ctx.fillText('MAREA',54,27);ctx.fillStyle='#eee1bf';ctx.fillText('MAREA',49,22);ctx.font='bold 11px Arial,sans-serif';ctx.fillStyle=C.mint;ctx.fillText('CREADO POR NACHOMMMARTINEZ',52,74);ctx.restore()}
@@ -204,6 +196,9 @@ let last=performance.now();function frame(now){const delta=Math.min((now-last)/1
 reset();requestAnimationFrame(frame);
 const characterButtons=[...document.querySelectorAll('[data-character]')];
 function chooseCharacter(index){characterIndex=index;characterButtons.forEach((button,i)=>{button.classList.toggle('selected',i===index);button.setAttribute('aria-pressed',i===index?'true':'false')});try{localStorage.setItem('marea.character.v1',String(index))}catch{}}
+const boardButtons=[...document.querySelectorAll('[data-board]')];
+function chooseBoard(index){boardIndex=index;boardButtons.forEach((button,i)=>{button.classList.toggle('selected',i===index);button.setAttribute('aria-pressed',i===index?'true':'false')});try{localStorage.setItem('marea.board.v1',String(index))}catch{}}
+boardButtons.forEach(button=>button.addEventListener('click',()=>chooseBoard(Number(button.dataset.board))));chooseBoard(boardIndex);
 characterButtons.forEach(button=>button.addEventListener('click',()=>chooseCharacter(Number(button.dataset.character))));chooseCharacter(characterIndex);
 function enter(){start.classList.add('hidden');tracks.forEach(track=>track.volume=0);setupAudio();tracks.forEach(track=>track.play().catch(()=>{}));last=performance.now()}
 document.getElementById('startButton').addEventListener('click',enter);
