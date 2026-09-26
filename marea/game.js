@@ -171,7 +171,7 @@ function pixelate(){
  const frame=pixelCtx.getImageData(0,0,320,180),data=frame.data;
  // A restrained 16-bit palette, with ordered dither to preserve the sky and sea gradients.
  const bayer=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
- for(let y=0;y<180;y++)for(let x=0;x<320;x++){const i=(y*320+x)*4,d=(bayer[(y&3)*4+(x&3)]-7.5)*1.4;for(let c=0;c<3;c++)data[i+c]=clamp(Math.round((data[i+c]+d)/12)*12,0,255)}
+ for(let y=0;y<180;y++)for(let x=0;x<320;x++){const i=(y*320+x)*4,d=(bayer[(y&3)*4+(x&3)]-7.5)*.45;for(let c=0;c<3;c++)data[i+c]=clamp(Math.round((data[i+c]+d)/16)*16,0,255)}
  pixelCtx.putImageData(frame,0,0);ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(pixelCanvas,0,0,W,H);ctx.restore()
 }
 function render(){
