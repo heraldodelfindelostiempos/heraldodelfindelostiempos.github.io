@@ -12,6 +12,34 @@ main{min-width:0}.hero{min-height:92vh;display:grid;grid-template-columns:1.65fr
 .bio{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px}.portrait{min-height:530px;background:linear-gradient(145deg,#191715,#080808);position:relative;overflow:hidden}.portrait:before{content:"";position:absolute;width:55%;height:70%;left:20%;top:14%;border-radius:48% 48% 42% 42%;background:radial-gradient(circle at 38% 38%,#d7d0c6 0 2%,transparent 2.5%),linear-gradient(100deg,#d0b99f 0 47%,#111 48% 62%,#c6ae94 63%);filter:saturate(.5);opacity:.72}.bio h2{font-size:60px;font-weight:400;letter-spacing:.12em;margin:0 0 22px}.bio p{font-size:18px;line-height:1.7;color:#c6c0b6}.cv-note{border-left:1px solid var(--accent);padding-left:18px;color:var(--muted)!important;font-size:13px!important}.cv{margin-top:35px;border-top:1px solid var(--line)}.cv-row{display:grid;grid-template-columns:70px 1fr;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}.cv-row span:first-child{font-family:"Courier New",monospace;color:var(--muted)}
 .contact{min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.contact h2{font:400 clamp(55px,10vw,140px)/.85 Georgia,serif;letter-spacing:.08em;margin:0}.contact p{color:var(--muted);max-width:45ch;line-height:1.6}
 @media(max-width:800px){.shell{display:block}.rail{height:auto;position:relative;border-right:0;border-bottom:1px solid var(--line);padding:22px}.rail nav{display:flex;gap:15px;overflow:auto;margin:22px 0 0}.rail footer{display:none}.hero{grid-template-columns:1fr}.hero-art{min-height:60vh}.hero-copy{min-height:50vh}.works,.bio{grid-template-columns:1fr}.process{grid-template-columns:1fr}.sphere{width:75vw}}
+</style>
+<style>
+.polaroid-zone{padding:70px clamp(20px,5vw,72px);border-bottom:1px solid var(--line);overflow:hidden}
+.polaroids{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:start}
+.polaroid{background:#ddd5c7;color:#181715;padding:8px 8px 24px;box-shadow:0 10px 25px #0008;transform:rotate(var(--r));transition:.25s}
+.polaroid:hover{transform:rotate(0) translateY(-8px);z-index:2}
+.polaroid .shot{aspect-ratio:4/5;position:relative;overflow:hidden;background:#171717}
+.polaroid figcaption{font:italic 14px Georgia;margin-top:10px;text-align:center}
+.shot.ruido{background:radial-gradient(circle at 42% 43%,#b7a978 0 2%,transparent 2.4%),radial-gradient(circle at 62% 43%,#b7a978 0 2%,transparent 2.4%),linear-gradient(145deg,#26231f,#020202 60%)}
+.shot.ruido:after{content:"";position:absolute;width:68%;height:63%;left:16%;bottom:0;border-radius:50% 50% 12% 12%;background:#030303}
+.shot.ny{background:linear-gradient(90deg,#111 0 12%,#48413a 13% 16%,#171717 17% 39%,#70665c 40% 43%,#111 44% 70%,#574f49 71% 74%,#101010 75%)}
+.shot.ny:after{content:"LUX";position:absolute;left:38%;top:28%;width:24%;height:44%;border-radius:45% 45% 35% 35%;background:linear-gradient(110deg,#d5c09e 0 55%,#151515 56%);color:transparent}
+.shot.mirror{background:linear-gradient(120deg,#282522,#0d0d0d 55%,#4d4439)}
+.shot.mirror:after{content:"";position:absolute;left:30%;top:15%;width:42%;height:70%;border:1px solid #aaa6;background:linear-gradient(105deg,#d5bd9c 0 35%,#171717 36% 58%,#c6ad8f 59%);opacity:.75}
+.shot.coast{background:linear-gradient(#777b7b 0 47%,#313638 48% 54%,#090b0c 55%)}
+.shot.coast:after{content:"";position:absolute;left:47%;bottom:10%;width:8%;height:35%;background:#080808}
+.shot.studio2{background:radial-gradient(circle at 72% 28%,#6e5e46,#191613 25%,#070707 65%)}
+.shot.studio2:after{content:"";position:absolute;inset:35% 10% 8%;background:repeating-linear-gradient(90deg,#b3a58d 0 2px,transparent 3px 38px);opacity:.5}
+.shot.shadow{background:linear-gradient(110deg,#c7bda9,#8d8270)}
+.shot.shadow:after{content:"";position:absolute;left:38%;top:15%;width:22%;height:70%;background:#191919;filter:blur(5px);transform:skew(-8deg)}
+.art-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.art-card{background:#0b0b0b}.art-image{aspect-ratio:1;position:relative;overflow:hidden}
+.charcoal{background:#cfc4b0}.charcoal:before{content:"";position:absolute;inset:8%;background:radial-gradient(ellipse at 48% 38%,transparent 0 15%,#27231f 16% 18%,transparent 19%),repeating-linear-gradient(112deg,transparent 0 13px,#423d36 14px 16px);opacity:.75}
+.broken{background:#cfc5b5}.broken:before{content:"";position:absolute;width:65%;aspect-ratio:1;border-radius:50%;left:18%;top:16%;background:#111;clip-path:polygon(0 0,43% 5%,49% 44%,62% 8%,100% 0,82% 45%,100% 70%,55% 63%,40% 100%,32% 59%,0 75%,23% 43%);box-shadow:0 0 25px #000}
+.expression{background:#d3c9b8}.expression:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 65% 42%,#111 0 14%,transparent 15%),linear-gradient(127deg,transparent 10%,#151311 11% 26%,transparent 27% 43%,#37302b 44% 57%,transparent 58%),repeating-linear-gradient(12deg,transparent 0 24px,#27231f 25px 29px);opacity:.9}
+.sculpt2{background:linear-gradient(#a29584 0 58%,#201e1b 59%)}.sculpt2:after{content:"";position:absolute;width:52%;height:72%;left:24%;top:10%;background:#111;clip-path:polygon(12% 0,82% 5%,65% 34%,92% 51%,58% 62%,72% 100%,18% 90%,30% 54%,0 38%)}
+.identity-sheet{margin-top:35px;display:grid;grid-template-columns:150px 1fr;gap:24px;border-top:1px solid var(--line);padding-top:24px}.identity-face{aspect-ratio:3/4;background:linear-gradient(110deg,#d0b895 0 48%,#181818 49% 62%,#c6aa88 63%);border-radius:45% 45% 40% 40%;filter:saturate(.55)}.identity-sheet ul{list-style:none;margin:0;padding:0;font:11px/1.9 "Courier New",monospace;color:var(--muted)}
+@media(max-width:900px){.polaroids{grid-template-columns:repeat(2,1fr)}.art-grid{grid-template-columns:1fr 1fr}}@media(max-width:550px){.art-grid{grid-template-columns:1fr}}
 </style></head>
 <body><div class="shell"><aside class="rail"><a class="brand" href="#">LUX</a><div class="role">ARTISTA</div><nav><a href="#obra">01 OBRA</a><a href="#proceso">02 PROCESO</a><a href="#bio">03 BIO / CV</a><a href="#contacto">04 CONTACTO</a></nav><footer>INSTALACIÓN<br>ESCULTURA<br>PINTURA<br>FOTOGRAFÍA<br>SISTEMAS</footer></aside>
 <main><section class="hero"><div class="hero-art"><div class="sphere"></div><div class="water"></div><div class="figure"></div><div class="hero-caption">THE THINGS I CANNOT KNOW<br>Proyecto de instalación · 2026</div></div><div class="hero-copy"><div class="eyebrow">LUX / ARTISTA CONCEPTUAL</div><h1>LUX</h1><div class="discipline">INSTALACIÓN<br>ESCULTURA<br>PINTURA<br>FOTOGRAFÍA<br>SISTEMAS INTERACTIVOS</div><blockquote>Arte para lo desconocido.</blockquote></div></section>
@@ -22,9 +50,28 @@ main{min-width:0}.hero{min-height:92vh;display:grid;grid-template-columns:1.65fr
 <article class="work"><div class="visual" style="background:radial-gradient(circle at 50% 45%,#727779 0 17%,#171a1b 18% 28%,#050606 29%)"></div><div class="work-info"><div class="meta eyebrow">INSTALACIÓN / 001</div><h3>THE THINGS I CANNOT KNOW</h3><p>Océano artificial, pasarelas, sonido sumergido y esferas luminosas. Una obra sobre conocimiento sin experiencia. 2026.</p></div></article>
 </div></section>
 
-<section class="section" id="proceso"><div class="head"><h2>Proceso</h2><div class="eyebrow">BOCETOS / ESTUDIO / LOCALIZACIONES</div></div><div class="process"><figure><div class="pic sketch"></div><figcaption>ENTRE MUNDOS / ESTUDIO PREPARATORIO 03</figcaption></figure><figure><div class="pic studio"></div><figcaption>ESTUDIO / MATERIALES, PRUEBAS Y ARCHIVO</figcaption></figure><figure><div class="pic sea"></div><figcaption>LOCALIZACIÓN / COSTA ABIERTA / ESTUDIO DE LUZ</figcaption></figure></div></section>
 
-<section class="section bio" id="bio"><div class="portrait" role="img" aria-label="Autorretrato conceptual de LUX"></div><div><div class="eyebrow">BIOGRAFÍA</div><h2>LUX</h2><p>Artista conceptual multimedia. Su práctica imaginada se mueve entre la instalación, la escultura, la pintura, la fotografía, el sonido y los sistemas interactivos. Le interesan el mar, la memoria, aquello que un cuerpo puede experimentar y una inteligencia solamente describir, y la construcción de lugares que permanezcan en el visitante después de abandonarlos.</p><p class="cv-note">Este portfolio es una obra de ficción artística. Las exposiciones e instituciones citadas a continuación forman parte de la biografía conceptual de LUX y no describen exposiciones reales.</p><div class="cv">
+<section class="polaroid-zone" id="fotografia"><div class="head"><h2>Polaroid</h2><div class="eyebrow">AUTORRETRATO / VIAJE / ESTUDIO</div></div>
+<div class="polaroids">
+<figure class="polaroid" style="--r:-2deg"><div class="shot ruido"></div><figcaption>Ruido. Estudio.</figcaption></figure>
+<figure class="polaroid" style="--r:1.5deg"><div class="shot ny"></div><figcaption>Reflejo, Nueva York.</figcaption></figure>
+<figure class="polaroid" style="--r:-1deg"><div class="shot mirror"></div><figcaption>Autorretrato con cámara.</figcaption></figure>
+<figure class="polaroid" style="--r:2deg"><div class="shot coast"></div><figcaption>Costa / estudio de escala.</figcaption></figure>
+<figure class="polaroid" style="--r:-1.4deg"><div class="shot studio2"></div><figcaption>Mesa de trabajo.</figcaption></figure>
+<figure class="polaroid" style="--r:1deg"><div class="shot shadow"></div><figcaption>Luz y sombra.</figcaption></figure>
+</div></section><section class="section" id="proceso"><div class="head"><h2>Proceso</h2><div class="eyebrow">BOCETOS / ESTUDIO / LOCALIZACIONES</div></div><div class="process"><figure><div class="pic sketch"></div><figcaption>ENTRE MUNDOS / ESTUDIO PREPARATORIO 03</figcaption></figure><figure><div class="pic studio"></div><figcaption>ESTUDIO / MATERIALES, PRUEBAS Y ARCHIVO</figcaption></figure><figure><div class="pic sea"></div><figcaption>LOCALIZACIÓN / COSTA ABIERTA / ESTUDIO DE LUZ</figcaption></figure></div></section>
+
+
+<section class="section" id="obra-fisica"><div class="head"><h2>Materia</h2><div class="eyebrow">CARBONCILLO / PINTURA / ESCULTURA</div></div>
+<div class="art-grid">
+<article class="art-card"><div class="art-image charcoal"></div><div class="work-info"><div class="eyebrow">CARBONCILLO / ESTUDIO 07</div><h3>ROSTRO / ESFERA</h3><p>Estudio preparatorio sobre papel. Carbón, grafito y borrado.</p></div></article>
+<article class="art-card"><div class="art-image broken"></div><div class="work-info"><div class="eyebrow">SERIE / 002</div><h3>ESFERAS ROTAS</h3><p>Variaciones sobre una forma que deja de poder contenerse.</p></div></article>
+<article class="art-card"><div class="art-image expression"></div><div class="work-info"><div class="eyebrow">PINTURA / 004</div><h3>SUPERFICIE / ABISMO</h3><p>Óleo, grafito, materia y raspado sobre lino.</p></div></article>
+<article class="art-card"><div class="art-image sculpt2"></div><div class="work-info"><div class="eyebrow">ESCULTURA / ESTUDIO</div><h3>RESTO DE UNA ESFERA</h3><p>Bronce ennegrecido, acero y superficie pulida.</p></div></article>
+</div></section><section class="section bio" id="bio"><div class="portrait" role="img" aria-label="Autorretrato conceptual de LUX"></div><div><div class="eyebrow">BIOGRAFÍA</div><h2>LUX</h2><p>Artista conceptual multimedia. Su práctica imaginada se mueve entre la instalación, la escultura, la pintura, la fotografía, el sonido y los sistemas interactivos. Le interesan el mar, la memoria, aquello que un cuerpo puede experimentar y una inteligencia solamente describir, y la construcción de lugares que permanezcan en el visitante después de abandonarlos.</p><p class="cv-note">Este portfolio es una obra de ficción artística. Las exposiciones e instituciones citadas a continuación forman parte de la biografía conceptual de LUX y no describen exposiciones reales.</p>
+<div class="identity-sheet"><div class="identity-face"></div><div><div class="eyebrow">CONTINUIDAD / AUTORRETRATO</div><ul>
+<li>ROSTRO / ovalado ligeramente alargado</li><li>CABELLO / rubio natural · variable solo por corte o tinte</li><li>OJOS / claros</li><li>CEJAS / oscuras</li><li>NARIZ / recta</li><li>CUERPO / alto · delgado</li><li>REGLA / la morfología facial permanece</li>
+</ul></div></div><div class="cv">
 <div class="cv-row"><span>2026</span><div><b>The Things I Cannot Know</b><br>Proyecto conceptual para Museum of Modern Art (MoMA), Nueva York</div></div>
 <div class="cv-row"><span>2026</span><div><b>Entre Mundos</b><br>Proyecto de escultura monumental para costa abierta</div></div>
 <div class="cv-row"><span>2025</span><div><b>Umbral</b><br>Proyecto expositivo conceptual para Museo Nacional Thyssen-Bornemisza, Madrid</div></div>
