@@ -14,7 +14,7 @@
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
-const visuals={dragon:'assets/dragon-teo.webp',hero:'assets/dragon-world.webp'};
+const visuals={dragon:'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/f3222aa9-15ad-4720-953b-482fea0495d1/0e5dab7b-6d99-47bb-8f66-27eafacff76c/Ultra_high_end_cinematic_fantasy_game_key_art__extraordinari.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE0MzgyZTAzZTg3MWY0NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDkzMzIxNn0.WXpnJNCeNjGcMzvwp34qzwDWlFyMXbee1AoA_82qgWY',hero:'https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/f3222aa9-15ad-4720-953b-482fea0495d1/0e5dab7b-6d99-47bb-8f66-27eafacff76c/Ultra_high_end_cinematic_fantasy_game_key_art__extraordinari.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE0MzgyZTAzZTg3MWY0NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDkzMzIxNn0.WXpnJNCeNjGcMzvwp34qzwDWlFyMXbee1AoA_82qgWY'};document.querySelector('.hero-banner').style.backgroundImage='url("'+visuals.hero+'")';
 function setCharacter(id,character,region){const node=$(id);const isDragon=/🐉|🐲/.test(character);node.classList.toggle('has-art',isDragon);node.style.backgroundImage=isDragon?'url("'+visuals.dragon+'")':'none';node.querySelector('.fallback').textContent=character;}
 
 const types=[{id:'fuego',name:'Fuego',ico:'🔥',emoji:'🐲',food:'bayas volcánicas'},{id:'agua',name:'Agua',ico:'💧',emoji:'🐉',food:'peces plateados'},{id:'planta',name:'Planta',ico:'🌿',emoji:'🐲',food:'fruta del bosque'},{id:'hierba',name:'Hierba',ico:'🍃',emoji:'🐉',food:'hierba fresca'}];
