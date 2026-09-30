@@ -14,7 +14,7 @@
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
-const visuals={dragon:'../assets/heraldo-game.png',hero:'../assets/heraldo-game.png'};document.querySelector('.hero-banner').style.backgroundImage='url("'+visuals.hero+'")';
+const visuals={dragon:'assets/dragon-teo.svg',hero:'assets/dragon-teo.svg'};document.querySelector('.hero-banner').style.backgroundImage='url("'+visuals.hero+'")';
 function setCharacter(id,character,region){const node=$(id);const isDragon=/🐉|🐲/.test(character);node.classList.toggle('has-art',isDragon);node.style.backgroundImage=isDragon?'url("'+visuals.dragon+'")':'none';node.querySelector('.fallback').textContent=character;}
 
 const types=[{id:'fuego',name:'Fuego',ico:'🔥',emoji:'🐲',food:'bayas volcánicas'},{id:'agua',name:'Agua',ico:'💧',emoji:'🐉',food:'peces plateados'},{id:'planta',name:'Planta',ico:'🌿',emoji:'🐲',food:'fruta del bosque'},{id:'hierba',name:'Hierba',ico:'🍃',emoji:'🐉',food:'hierba fresca'}];
