@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://heraldodelfindelostiempos.github.io/sitemap.xml
