@@ -7,9 +7,9 @@
 <script>
 const gate=document.getElementById("accessGate");document.getElementById("accessForm").addEventListener("submit",e=>{e.preventDefault();const user=document.getElementById("accessUser").value;const pass=document.getElementById("accessPass").value;if(user==="selina" && pass==="kyle"){gate.classList.add("hidden")}else{document.getElementById("accessError").textContent="Credenciales incorrectas"}});
 const data=[
-{n:"NASA — ISS directo oficial 2026",c:"Planetarias",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=0P41gTF-Nl4",embed:"https://www.youtube-nocookie.com/embed/0P41gTF-Nl4?autoplay=1&mute=1&playsinline=1&origin=https%3A%2F%2Fheraldodelfindelostiempos.github.io"},
-{n:"EarthCam — Times Square 4K (emisión)",c:"Ciudades",place:"Nueva York, EE. UU.",url:"https://www.youtube.com/watch?v=Lr-u3vIZ3KE",embed:"https://www.youtube.com/embed/Lr-u3vIZ3KE?autoplay=1&mute=1&playsinline=1&rel=0"},
-{n:"EarthCam — Times Square 4K (alternativa)",c:"Ciudades",place:"Nueva York, EE. UU.",url:"https://www.youtube.com/watch?v=Q0uLV52xGZE",embed:"https://www.youtube.com/embed/Q0uLV52xGZE?autoplay=1&mute=1&playsinline=1&rel=0"},
+{n:"NASA — ISS directo oficial 2026",c:"Planetarias",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=0P41gTF-Nl4"},
+{n:"EarthCam — Times Square 4K (emisión)",c:"Ciudades",place:"Nueva York, EE. UU.",url:"https://www.youtube.com/watch?v=Lr-u3vIZ3KE"},
+{n:"EarthCam — Times Square 4K (alternativa)",c:"Ciudades",place:"Nueva York, EE. UU.",url:"https://www.youtube.com/watch?v=Q0uLV52xGZE"},
 {"n":"Explore — cámaras activas","c":"Animales","place":"Mundial","url":"https://explore.org/livecams/currently-live"},
 {"n":"Explore — osos","c":"Animales","place":"Alaska y otros lugares","url":"https://explore.org/livecams/bears"},
 {"n":"Explore — águilas","c":"Animales","place":"América del Norte","url":"https://explore.org/livecams/birds"},
@@ -28,7 +28,7 @@ const data=[
 {"n":"Skyline — Sídney","c":"Ciudades","place":"Australia","url":"https://www.skylinewebcams.com/es/webcam.html"},
 {"n":"Skyline — Creta submarina","c":"Submarinas","place":"Creta, Grecia","url":"https://www.skylinewebcams.com/es/webcam.html"},
 {"n":"EarthCam — mundo","c":"Ciudades","place":"Mundial","url":"https://www.earthcam.com/"},
-{n:"ISS — NASA (vídeo exterior)",c:"Planetarias",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=aB1yRz0HhdY",embed:"https://www.youtube-nocookie.com/embed/aB1yRz0HhdY?autoplay=1&mute=1&playsinline=1"},
+{n:"ISS — NASA (vídeo exterior)",c:"Planetarias",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=aB1yRz0HhdY"},
 {n:"EarthCam — Times Square",c:"Ciudades",place:"Nueva York, EE. UU.",url:"https://www.earthcam.com/usa/newyork/timessquare/"},
 {n:"EarthCam — Abbey Road",c:"Culturales",place:"Londres, Reino Unido",url:"https://www.abbeyroad.com/crossing"},
 {n:"Explore.org — Cámaras de fauna",c:"Animales",place:"Varias ubicaciones",url:"https://explore.org/livecams"},
@@ -38,7 +38,7 @@ const data=[
 {n:"Windy — Webcams",c:"Meteorología",place:"Mundial",url:"https://www.windy.com/webcams"},
 {n:"Railcam — Trenes",c:"Transportes",place:"Reino Unido",url:"https://railcam.uk/"},
 {n:"Port of Rotterdam",c:"Marítimas",place:"Rotterdam, Países Bajos",url:"https://www.portofrotterdam.com/"},
-{n:"ISS — NASA (vídeo de la estación)",c:"Astronomía",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=jKHvbJe9c_Y",embed:"https://www.youtube-nocookie.com/embed/jKHvbJe9c_Y?autoplay=1&mute=1&playsinline=1"},
+{n:"ISS — NASA (vídeo de la estación)",c:"Astronomía",place:"Órbita terrestre",url:"https://www.youtube.com/watch?v=jKHvbJe9c_Y"},
 {n:"EarthCam — Directorio mundial",c:"Misteriosas",place:"Mundial",url:"https://www.earthcam.com/"},
 {n:"Twitch — IRL",c:"Personales",place:"Mundial",url:"https://www.twitch.tv/directory/category/irl"},
 {n:"YouTube — Directos",c:"Industriales",place:"Mundial",url:"https://www.youtube.com/live"}
@@ -53,10 +53,10 @@ $("viewer").removeAttribute("src");
 if(v.embed){$("viewer").hidden=false;$("sourceNotice").hidden=true;$("viewer").src=v.embed;if(autonomy){const token=autoToken;autoTimer=setTimeout(()=>{if(autonomy&&token===autoToken){$("status").textContent="No se puede confirmar desde el navegador si el vídeo está activo. Si está bloqueado, pulsa Siguiente o Abrir fuente oficial."}},12000)}$("status").textContent="Intentando reproducir "+v.n+". Error 153: si aparece, el proveedor puede estar bloqueando el vídeo integrado; usa Abrir fuente oficial."}
 else{$("viewer").hidden=true;$("sourceNotice").hidden=false;$("sourceNotice").textContent=v.n+" · "+v.place+" — Esta fuente no permite reproducción integrada. Pulsa Abrir fuente oficial."}
 $("fav").textContent=favs.has(i)?"★ Quitar favorito":"☆ Favorito";render()}
-function step(n){const a=visible().filter(v=>v.embed);if(!a.length)return;let p=a.findIndex(v=>v.i===selected);tune(a[(p+n+a.length)%a.length].i)}
+function step(n){const a=visible();if(!a.length)return;let p=a.findIndex(v=>v.i===selected);tune(a[(p+n+a.length)%a.length].i)}
 function refreshSources(){lastRefresh=new Date();$("status").textContent="Directorio actualizado localmente: "+lastRefresh.toLocaleTimeString("es-ES")+". "+data.length+" fuentes registradas, "+data.filter(v=>v.embed).length+" reproductores integrados. Disponibilidad en directo no verificada. La reproducción actual no se interrumpe.";render()}
 $("refresh").onclick=refreshSources;
-$("auto").onclick=()=>{autonomy=!autonomy;$("auto").setAttribute("aria-pressed",String(autonomy));$("auto").textContent=autonomy?"■ Autonomía: ON":"▶ Autonomía: OFF";if(autonomy){const playable=data.map((v,i)=>({...v,i})).filter(v=>v.embed);if(!playable.length){$("status").textContent="No hay reproductores integrados disponibles.";return}const next=playable.find(v=>v.i!==selected)||playable[0];tune(next.i);$("status").textContent="Autonomía activada: intentando reproducir "+next.n+". No es posible verificar en tiempo real que YouTube permita la reproducción."}else{if(autoTimer)clearTimeout(autoTimer);$("status").textContent="Autonomía desactivada. El canal seleccionado continúa."}};
+$("auto").onclick=()=>{autonomy=!autonomy;$("auto").setAttribute("aria-pressed",String(autonomy));$("auto").textContent=autonomy?"■ Autonomía: ON":"▶ Autonomía: OFF";if(autonomy){const playable=data.map((v,i)=>({...v,i})).filter(v=>v.embed);if(!playable.length){$("status").textContent="No hay emisiones integradas verificadas. Abre una fuente oficial para ver sus cámaras en directo.";autonomy=false;$("auto").setAttribute("aria-pressed","false");$("auto").textContent="▶ Autonomía: OFF";return}const next=playable.find(v=>v.i!==selected)||playable[0];tune(next.i);$("status").textContent="Autonomía activada: intentando reproducir "+next.n+". No es posible verificar en tiempo real que YouTube permita la reproducción."}else{if(autoTimer)clearTimeout(autoTimer);$("status").textContent="Autonomía desactivada. El canal seleccionado continúa."}};
 setInterval(refreshSources,60000);
-$("search").oninput=render;$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);$("random").onclick=()=>{const a=visible().filter(v=>v.embed);if(a.length)tune(a[Math.floor(Math.random()*a.length)].i)};$("fav").onclick=()=>{favs.has(selected)?favs.delete(selected):favs.add(selected);localStorage.setItem("webcamarchive-favs",JSON.stringify([...favs]));tune(selected)};$("full").onclick=()=>document.querySelector(".screen").requestFullscreen?.();document.addEventListener("keydown",e=>{if(e.target.tagName==="INPUT")return;if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1)});setInterval(()=>$("clock").textContent=new Date().toLocaleString("es-ES"),1000);tune(0);refreshSources();
+$("search").oninput=render;$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);$("random").onclick=()=>{const a=visible();if(a.length)tune(a[Math.floor(Math.random()*a.length)].i)};$("fav").onclick=()=>{favs.has(selected)?favs.delete(selected):favs.add(selected);localStorage.setItem("webcamarchive-favs",JSON.stringify([...favs]));tune(selected)};$("full").onclick=()=>document.querySelector(".screen").requestFullscreen?.();document.addEventListener("keydown",e=>{if(e.target.tagName==="INPUT")return;if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1)});setInterval(()=>$("clock").textContent=new Date().toLocaleString("es-ES"),1000);tune(0);refreshSources();
 </script></body></html>
